@@ -1,7 +1,7 @@
-﻿PaintNetPlugins
+﻿iiIEPaintNetPlugins
 =====
 
-PaintNetPlugins is a plugin for [Paint.Net](https://www.getpaint.net/) which allows saving and loading of MOS V1 files, as used in Infinity Engine games (Baldur's Gate I, Baldur's Gate II, Icewind Dale I, Icewind Dale II and Placescape: Torment). The plugins supports loading both compressed and uncompressed MOS files, though always saves uncompressed files.
+iiIEPaintNetPluginss is a plugin for [Paint.Net](https://www.getpaint.net/) which allows saving and loading of MOS V1 files, as used in Infinity Engine games (Baldur's Gate I, Baldur's Gate II, Icewind Dale I, Icewind Dale II and Placescape: Torment). The plugins supports loading both compressed and uncompressed MOS files, though always saves uncompressed files.
 
 The plugin is tested with Paint.Net 5.1.9 (Stable 5).
 
@@ -19,7 +19,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [.
 
 ```
 # Clone this repository
-$ git clone https://github.com/btigi/paintnetplugins
+$ git clone https://github.com/btigi/iiiepaintnetplugins
 
 # Go into the repository
 $ cd src
@@ -30,4 +30,4 @@ $ dotnet build
 
 ## Licencing
 
-PaintNetPlugins is licenced under the MIT License. Full licence details are available in licence.md
+iiIEPaintNetPlugins is licenced under the MIT License. Full licence details are available in licence.md
