@@ -56,7 +56,7 @@ namespace TisFileTypePlugin
                 {
                     File.WriteAllBytes(tempFile, fileData);
 
-                    var image = new TisConverter().Convert(tempFile, width, height) ?? throw new Exception("Failed to decode TIS file - could not extract image data");
+                    var image = new TisConverter().FromTis(tempFile, width, height) ?? throw new Exception("Failed to decode TIS file - could not extract image data");
                     Bitmap bitmap = new Bitmap(image);
                     Document doc = new Document(bitmap.Width, bitmap.Height);
                     Surface surface = Surface.CopyFromBitmap(bitmap);
@@ -94,8 +94,22 @@ namespace TisFileTypePlugin
 
                 try
                 {
-                    // TODO: TIS Saving
-                    throw new NotImplementedException("TIS file saving is not currently implemented.");
+                    string tempFile = Path.GetTempFileName();
+                    try
+                    {
+                        var mosConverter = new ii.InfinityEngine.TisConverter();
+                        mosConverter.ToTis(bitmap, tempFile);
+
+                        using FileStream tempStream = File.OpenRead(tempFile);
+                        tempStream.CopyTo(output);
+                    }
+                    finally
+                    {
+                        if (File.Exists(tempFile))
+                        {
+                            File.Delete(tempFile);
+                        }
+                    }
                 }
                 finally
                 {
